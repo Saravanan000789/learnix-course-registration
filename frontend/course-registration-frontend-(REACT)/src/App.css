@@ -1,0 +1,1485 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #050817;
+  color: white;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 70% 15%,
+      rgba(91, 67, 255, 0.15),
+      transparent 30%
+    ),
+    #050817;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  height: 82px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4.2%;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(5, 8, 23, 0.85);
+
+  backdrop-filter: blur(15px);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+}
+
+
+/* LOGO */
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: #ffffff;
+}
+
+.logo b {
+  color: #7657ff;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.nav-links button {
+  position: relative;
+
+  border: none;
+  background: transparent;
+
+  color: #aeb5cf;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  padding: 10px 0;
+
+  transition: 0.25s;
+}
+
+.nav-links button:hover,
+.nav-links button.active {
+  color: white;
+}
+
+.nav-links button.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: -9px;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #7b5cff,
+    #b86cff
+  );
+
+  box-shadow: 0 0 12px #7b5cff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: calc(100vh - 82px);
+
+  width: 100%;
+
+  padding: 65px 5% 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 50px;
+
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 75% 40%,
+      rgba(68, 83, 255, 0.16),
+      transparent 30%
+    );
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+  flex: 1;
+
+  max-width: 760px;
+
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+}
+
+
+/* EYEBROW */
+
+.eyebrow {
+  color: #9a70ff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 25px;
+}
+
+.eyebrow span {
+  color: #4e9cff;
+
+  margin: 0 7px;
+}
+
+
+/* MAIN HEADING */
+
+.hero h1 {
+  font-size: clamp(55px, 5.5vw, 82px);
+
+  line-height: 1.02;
+
+  letter-spacing: -4px;
+
+  font-weight: 800;
+}
+
+.hero h1 span {
+  background: linear-gradient(
+    90deg,
+    #8757ff,
+    #6c78ff,
+    #4f9cff
+  );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero-content p {
+  margin: 30px auto 0;
+
+  max-width: 620px;
+
+  color: #9ba5c4;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   REGISTER BUTTON
+========================================================= */
+
+.register-btn {
+  display: block;
+
+  margin: 35px auto 0;
+
+  border: none;
+
+  padding: 17px 28px;
+
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  background: linear-gradient(
+    100deg,
+    #7650ff,
+    #637dff
+  );
+
+  box-shadow:
+    0 10px 35px rgba(103, 77, 255, 0.35);
+
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 45px rgba(103, 77, 255, 0.55);
+}
+
+.register-btn:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow:
+    0 10px 35px rgba(103, 77, 255, 0.2);
+}
+
+.register-btn span {
+  margin-left: 12px;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   LX CARD
+========================================================= */
+
+.hero-card {
+  flex: 0 0 390px;
+
+  width: 390px;
+
+  padding: 38px 30px 27px;
+
+  text-align: center;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(134, 108, 255, 0.35);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(35, 47, 92, 0.65),
+      rgba(13, 19, 43, 0.9)
+    );
+
+  box-shadow:
+    0 0 80px rgba(92, 69, 255, 0.13),
+    inset 0 0 30px rgba(104, 79, 255, 0.05);
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   LX LOGO
+========================================================= */
+
+.lx-logo {
+  width: 135px;
+
+  height: 135px;
+
+  margin: 0 auto 23px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 60px;
+
+  font-weight: 800;
+
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #313e87,
+      #121936 65%
+    );
+
+  border: 1px solid rgba(132, 116, 255, 0.7);
+
+  box-shadow:
+    0 0 35px rgba(100, 76, 255, 0.4),
+    inset 0 0 30px rgba(109, 82, 255, 0.25);
+}
+
+.lx-logo span {
+  color: white;
+}
+
+.lx-logo b {
+  color: #865eff;
+}
+
+
+/* ORBIT */
+
+.orbit {
+  position: absolute;
+
+  width: 150px;
+
+  height: 48px;
+
+  border: 2px solid #9b63ff;
+
+  border-radius: 50%;
+
+  transform: rotate(-25deg);
+
+  box-shadow:
+    0 0 15px #754fff;
+}
+
+
+/* CARD TITLE */
+
+.hero-card h2 {
+  font-size: 27px;
+
+  margin-bottom: 9px;
+}
+
+.hero-card > p {
+  color: #8e98b8;
+
+  margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+  display: flex;
+
+  justify-content: space-around;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  padding-top: 22px;
+}
+
+.stats div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.stats strong {
+  color: #9674ff;
+
+  font-size: 20px;
+}
+
+.stats small {
+  color: #8790ad;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+.glow-one {
+  width: 250px;
+
+  height: 250px;
+
+  right: 10%;
+
+  top: 20%;
+
+  background: rgba(95, 64, 255, 0.15);
+}
+
+.glow-two {
+  width: 180px;
+
+  height: 180px;
+
+  left: -50px;
+
+  bottom: 0;
+
+  background: rgba(44, 111, 255, 0.1);
+}
+
+
+/* =========================================================
+   COURSES SECTION
+========================================================= */
+
+.courses-section {
+  width: 100%;
+
+  padding: 80px 4.5% 85px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* SECTION HEADING */
+
+.section-heading {
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+.section-heading > span {
+  color: #9b6aff;
+
+  font-size: 13px;
+
+  letter-spacing: 5px;
+
+  font-weight: 700;
+}
+
+.section-heading h2 {
+  font-size: 52px;
+
+  margin: 10px 0;
+
+  letter-spacing: -2px;
+}
+
+.section-heading p {
+  color: #858da8;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   COURSE GRID
+========================================================= */
+
+.course-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: auto;
+}
+
+
+/* COURSE CARD */
+
+.course-card {
+  padding: 25px 22px;
+
+  min-height: 225px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(123, 91, 255, 0.18);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 26, 55, 0.9),
+      rgba(8, 13, 31, 0.95)
+    );
+
+  transition: 0.3s;
+
+  position: relative;
+
+  text-align: center;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(123, 91, 255, 0.6);
+
+  box-shadow:
+    0 15px 50px rgba(80, 60, 255, 0.15);
+}
+
+
+/* COURSE NUMBER */
+
+.course-number {
+  position: absolute;
+
+  right: 15px;
+
+  top: 15px;
+
+  width: 40px;
+
+  height: 40px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: #a17cff;
+
+  border: 1px solid #654cff;
+
+  background: rgba(92, 66, 255, 0.08);
+
+  font-size: 14px;
+}
+
+
+/* COURSE ICON */
+
+.course-icon {
+  font-size: 32px;
+
+  margin-bottom: 16px;
+}
+
+
+/* COURSE TITLE */
+
+.course-card h3 {
+  font-size: 19px;
+
+  margin-bottom: 10px;
+}
+
+
+/* COURSE DESCRIPTION */
+
+.course-card p {
+  color: #7f88a4;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  max-width: 280px;
+
+  margin: auto;
+}
+
+
+/* =========================================================
+   REGISTER SECTION
+========================================================= */
+
+.register-section {
+  padding: 75px 5%;
+}
+
+
+/* REGISTER BOX */
+
+.register-box {
+  width: 100%;
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  text-align: center;
+
+  padding: 60px 30px;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(116, 86, 255, 0.3);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(90, 65, 255, 0.2),
+      transparent 65%
+    ),
+    #0b1028;
+}
+
+
+/* REGISTER LABEL */
+
+.register-box > span {
+  color: #9871ff;
+
+  font-size: 13px;
+
+  letter-spacing: 4px;
+}
+
+
+/* REGISTER HEADING */
+
+.register-box h2 {
+  font-size: 48px;
+
+  margin: 18px 0;
+}
+
+.register-box h2 strong {
+  color: #805bff;
+}
+
+
+/* REGISTER DESCRIPTION */
+
+.register-box > p {
+  color: #929bb7;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   REGISTRATION FORM
+========================================================= */
+
+.registration-form {
+  width: 100%;
+
+  max-width: 520px;
+
+  margin: 35px auto 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.registration-form input {
+  width: 100%;
+
+  padding: 16px 18px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(123, 91, 255, 0.25);
+
+  outline: none;
+
+  background: rgba(8, 13, 31, 0.85);
+
+  color: white;
+
+  font-size: 15px;
+
+  transition: 0.25s;
+}
+
+
+/* PLACEHOLDER */
+
+.registration-form input::placeholder {
+  color: #707995;
+}
+
+
+/* INPUT FOCUS */
+
+.registration-form input:focus {
+  border-color: #7657ff;
+
+  box-shadow:
+    0 0 0 3px rgba(118, 87, 255, 0.12),
+    0 0 25px rgba(118, 87, 255, 0.12);
+}
+
+
+/* =========================================================
+   CUSTOM COURSE DROPDOWN
+========================================================= */
+
+.custom-course-dropdown {
+  width: 100%;
+
+  position: relative;
+
+  z-index: 20;
+}
+
+
+/* DROPDOWN SELECT BUTTON */
+
+.course-select {
+  width: 100%;
+
+  height: 52px;
+
+  padding: 0 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(123, 91, 255, 0.25);
+
+  outline: none;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 22, 48, 0.96),
+      rgba(7, 12, 30, 0.98)
+    );
+
+  color: #aeb5cf;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+
+  text-align: left;
+}
+
+.course-select:hover,
+.course-select.open {
+  border-color: rgba(126, 91, 255, 0.8);
+
+  color: white;
+
+  box-shadow:
+    0 0 0 3px rgba(118, 80, 255, 0.08),
+    0 0 25px rgba(100, 70, 255, 0.12);
+}
+
+
+/* CUSTOM ARROW */
+
+/* =========================================================
+   COURSE DROPDOWN ARROW
+========================================================= */
+
+.course-arrow {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  transition: transform 0.25s ease;
+}
+
+/* Chevron */
+
+.course-arrow span {
+  width: 8px;
+  height: 8px;
+
+  border-right: 2px solid #a98cff;
+  border-bottom: 2px solid #a98cff;
+
+  transform: rotate(45deg);
+
+  margin-top: -4px;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Open state */
+
+.course-arrow.open {
+  transform: rotate(180deg);
+}
+
+.course-select:hover .course-arrow span,
+.course-select.open .course-arrow span {
+  border-color: #ffffff;
+}
+
+
+/* OPTIONS CONTAINER */
+
+.course-options {
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  top: calc(100% + 8px);
+
+  padding: 7px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(123, 91, 255, 0.35);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 22, 48, 0.99),
+      rgba(7, 12, 30, 0.99)
+    );
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.55),
+    0 0 35px rgba(90, 65, 255, 0.16);
+
+  backdrop-filter: blur(20px);
+
+  z-index: 999;
+
+  max-height: 320px;
+
+  overflow-y: auto;
+
+  animation: courseDropdownIn 0.18s ease-out;
+}
+
+
+/* COURSE OPTION */
+
+.course-option {
+  width: 100%;
+
+  min-height: 44px;
+
+  padding: 8px 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #aeb7d2;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+.course-option:hover {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(118, 80, 255, 0.18),
+      rgba(76, 113, 255, 0.08)
+    );
+
+  color: white;
+
+  transform: translateX(2px);
+}
+
+
+/* OPTION NUMBER */
+
+.option-number {
+  width: 29px;
+
+  height: 29px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 7px;
+
+  color: #9871ff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  background: rgba(118, 80, 255, 0.08);
+
+  border: 1px solid rgba(118, 80, 255, 0.2);
+}
+
+
+/* SELECTED OPTION */
+
+.course-option.selected {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(118, 80, 255, 0.16),
+      rgba(76, 113, 255, 0.06)
+    );
+
+  color: white;
+}
+
+.course-option.selected .option-number {
+  background: rgba(118, 80, 255, 0.2);
+
+  border-color: rgba(118, 80, 255, 0.5);
+}
+
+
+/* CHECK MARK */
+
+.option-check {
+  margin-left: auto;
+
+  color: #8b68ff;
+
+  font-size: 17px;
+
+  font-weight: 800;
+}
+
+
+/* DROPDOWN ANIMATION */
+
+@keyframes courseDropdownIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(-7px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* DROPDOWN SCROLLBAR */
+
+.course-options::-webkit-scrollbar {
+  width: 5px;
+}
+
+.course-options::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.course-options::-webkit-scrollbar-thumb {
+  background: rgba(123, 91, 255, 0.5);
+
+  border-radius: 10px;
+}
+
+.course-options::-webkit-scrollbar-thumb:hover {
+  background: rgba(145, 111, 255, 0.75);
+}
+
+
+/* =========================================================
+   FORM BUTTON
+========================================================= */
+
+.registration-form .register-btn {
+  margin: 8px auto 0;
+
+  min-width: 180px;
+}
+
+
+/* =========================================================
+   REGISTRATION MESSAGE
+========================================================= */
+
+.registration-message {
+  margin-top: 22px;
+
+  color: #9b82ff !important;
+
+  font-size: 14px !important;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  padding: 30px 4.5%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+footer p {
+  color: #707995;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   LARGE SCREEN
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .hero {
+    padding-left: 6%;
+
+    padding-right: 6%;
+  }
+
+  .hero-content {
+    max-width: 820px;
+  }
+
+  .hero h1 {
+    font-size: 82px;
+  }
+
+  .hero-card {
+    width: 410px;
+
+    flex-basis: 410px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .hero {
+    padding: 60px 4%;
+
+    gap: 35px;
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+
+    letter-spacing: -3px;
+  }
+
+  .hero-card {
+    flex-basis: 340px;
+
+    width: 340px;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE / SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .navbar {
+    height: 72px;
+
+    padding: 0 25px;
+  }
+
+  .nav-links {
+    gap: 25px;
+  }
+
+  .hero {
+    min-height: auto;
+
+    flex-direction: column;
+
+    padding: 70px 25px;
+
+    text-align: center;
+
+    gap: 55px;
+  }
+
+  .hero-content {
+    width: 100%;
+
+    max-width: 700px;
+  }
+
+  .hero h1 {
+    font-size: 55px;
+
+    letter-spacing: -3px;
+  }
+
+  .hero-content p {
+    max-width: 600px;
+  }
+
+  .hero-card {
+    width: min(390px, 100%);
+
+    flex-basis: auto;
+  }
+
+  .courses-section {
+    padding: 70px 25px;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .register-section {
+    padding: 65px 25px;
+  }
+
+  .registration-form {
+    max-width: 500px;
+  }
+
+  .course-options {
+    max-height: 300px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links button {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+
+    gap: 45px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+
+    line-height: 1.04;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin-top: 25px;
+  }
+
+  .register-btn {
+    padding: 15px 24px;
+
+    font-size: 15px;
+  }
+
+  .hero-card {
+    width: 100%;
+
+    padding: 32px 22px 25px;
+
+    border-radius: 23px;
+  }
+
+  .lx-logo {
+    width: 115px;
+
+    height: 115px;
+
+    font-size: 50px;
+  }
+
+  .orbit {
+    width: 130px;
+
+    height: 43px;
+  }
+
+  .hero-card h2 {
+    font-size: 24px;
+  }
+
+  .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .section-heading h2 {
+    font-size: 38px;
+  }
+
+  .section-heading p {
+    font-size: 15px;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    min-height: 210px;
+  }
+
+  .register-box {
+    padding: 50px 20px;
+
+    border-radius: 23px;
+  }
+
+  .register-box h2 {
+    font-size: 35px;
+  }
+
+  .register-box > p {
+    font-size: 15px;
+  }
+
+  .registration-form {
+    margin-top: 30px;
+
+    gap: 13px;
+  }
+
+  .registration-form input {
+    padding: 15px 16px;
+
+    font-size: 14px;
+  }
+
+  .course-select {
+    height: 48px;
+
+    padding: 0 16px;
+
+    font-size: 14px;
+  }
+
+  .course-option {
+    min-height: 42px;
+
+    font-size: 13px;
+  }
+
+  .option-number {
+    width: 27px;
+
+    height: 27px;
+  }
+
+  .course-options {
+    max-height: 280px;
+  }
+
+  footer {
+    padding: 25px 20px;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    text-align: center;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links button {
+    font-size: 13px;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .hero-card {
+    padding-left: 18px;
+
+    padding-right: 18px;
+  }
+
+  .course-select {
+    font-size: 13px;
+  }
+
+  .course-option {
+    font-size: 12px;
+
+    gap: 9px;
+  }
+}
